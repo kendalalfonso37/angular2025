@@ -6,4 +6,4 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './sidebar.component.html',
 })
-export class SidebarComponent { }
+export class SidebarComponent {}
