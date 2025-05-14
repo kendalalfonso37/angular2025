@@ -42,15 +42,10 @@ export class AuthService {
   }
 
   logoutFromBackend() {
-    return this.http.post(
-      `${this.API_URL}/api/auth/logout`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${this.getAccessToken()}`,
-        },
-      }
-    );
+    return this.http.post(`${this.API_URL}/api/auth/logout`, {
+      accessToken: this.getAccessToken(),
+      refreshToken: this.getRefreshToken(),
+    });
   }
 
   logout(): void {

@@ -5,7 +5,6 @@ export class AuthStore {
   private readonly ACCESS_TOKEN_KEY = 'accessToken';
   private readonly REFRESH_TOKEN_KEY = 'refreshToken';
 
-
   private accessToken = signal<string | null>(
     sessionStorage.getItem(this.ACCESS_TOKEN_KEY)
   );

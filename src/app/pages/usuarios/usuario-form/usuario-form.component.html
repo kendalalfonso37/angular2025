@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+
+  <input type="text" name="username" class="input input-bordered w-full validator" formControlName="username"
+    placeholder="Username" required />
+  @if (usernameError()) {
+  <div class="text-red-500 text-sm">El nombre de usuario es obligatorio</div>
+  }
+
+  <input type="email" name="email" class="input input-bordered w-full validator" formControlName="email"
+    placeholder="Email" required />
+  @if (emailError()) {
+  <div class="text-red-500 text-sm">Email inválido</div>
+  }
+
+  <input type="password" name="password" class="input input-bordered w-full" formControlName="password"
+    placeholder="Password" />
+  @if (passwordError()) {
+  <div class="text-red-500 text-sm">El password es obligatorio</div>
+  }
+
+  <label for="isActive">
+    <input type="checkbox" name="isActive" class="checkbox" formControlName="isActive" />
+    Usuario activo?
+  </label>
+  <br><br>
+
+  <button class="btn btn-primary" type="submit">Guardar</button>
+</form>
