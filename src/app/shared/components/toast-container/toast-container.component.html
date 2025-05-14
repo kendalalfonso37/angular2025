@@ -2,7 +2,7 @@
   @for (toast of toasts(); track $index) {
   <div class="alert" [class]="getAlertClass(toast.type)">
     <span>{{toast.message}}</span>
-    <button class="btn btn-sm btn-circle" (click)="dismiss(toast.id)">✕</button>
+    <button class="btn btn-ghost btn-sm btn-circle" (click)="dismiss(toast.id)">✕</button>
   </div>
   }
 </div>
