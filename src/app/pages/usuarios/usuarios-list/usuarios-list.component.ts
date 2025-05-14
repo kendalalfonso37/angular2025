@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { User } from '../../../models/user.interface';
 import { UserService } from '../../../core/services/user.service';
+import { NotificationService } from '../../../core/services/notification.service';
 
 @Component({
   selector: 'app-usuarios-list',
@@ -16,7 +17,11 @@ export class UsuariosListComponent {
   currentPage = signal(1);
   loading = signal(false);
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private notificationService: NotificationService
+  ) {
     effect(() => {
       const page = this.currentPage();
       this.loadUsers(page);
@@ -47,7 +52,18 @@ export class UsuariosListComponent {
 
   deleteUser(id: string) {
     if (confirm('¿Estás seguro de eliminar este usuario?')) {
-      this.userService.deleteUser(id).subscribe(() => this.loadUsers());
+      this.userService.deleteUser(id).subscribe(
+        {
+          next: () => {
+            this.notificationService.show(
+              'warning',
+              'Usuario eliminado correctamente'
+            );
+            this.loadUsers();
+          },
+        }
+        // () => this.loadUsers()
+      );
     }
   }
 
@@ -59,7 +75,18 @@ export class UsuariosListComponent {
           email: usuario.email,
           isActive: !usuario.isActive,
         })
-        .subscribe(() => this.loadUsers());
+        .subscribe(
+          {
+            next: () => {
+              this.notificationService.show(
+                'info',
+                'Estado del usuario actualizado correctamente'
+              );
+              this.loadUsers();
+            },
+          }
+          // () => this.loadUsers()
+        );
     }
   }
 
