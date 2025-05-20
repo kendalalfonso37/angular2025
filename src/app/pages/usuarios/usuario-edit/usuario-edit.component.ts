@@ -1,7 +1,8 @@
 import { Component, signal } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+
 import { User } from '../../../models/user.interface';
 import { UserService } from '../../../core/services/user.service';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UsuarioFormComponent } from '../usuario-form/usuario-form.component';
 import { NotificationService } from '../../../core/services/notification.service';
 
