@@ -11,6 +11,9 @@ import { RolesListComponent } from './pages/roles/roles-list/roles-list.componen
 import { RoleCreateComponent } from './pages/roles/role-create/role-create.component';
 import { RoleEditComponent } from './pages/roles/role-edit/role-edit.component';
 import { UsuariosAsignarRolesComponent } from './pages/usuarios/usuarios-asignar-roles/usuarios-asignar-roles.component';
+import { GruposListComponent } from './pages/grupos/grupos-list/grupos-list.component';
+import { GrupoCreateComponent } from './pages/grupos/grupo-create/grupo-create.component';
+import { GrupoEditComponent } from './pages/grupos/grupo-edit/grupo-edit.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +29,9 @@ export const routes: Routes = [
       { path: 'roles', component: RolesListComponent },
       { path: 'roles/create', component: RoleCreateComponent },
       { path: 'roles/edit/:id', component: RoleEditComponent },
+      { path: 'grupos', component: GruposListComponent },
+      { path: 'grupos/create', component: GrupoCreateComponent },
+      { path: 'grupos/edit/:id', component: GrupoEditComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
