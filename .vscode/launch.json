@@ -4,15 +4,21 @@
   "configurations": [
     {
       "name": "ng serve",
-      "type": "chrome",
+      "type": "msedge",
       "request": "launch",
+      "runtimeArgs": [
+        "-inPrivate"
+      ],
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/"
     },
     {
       "name": "ng test",
-      "type": "chrome",
+      "type": "msedge",
       "request": "launch",
+      "runtimeArgs": [
+        "-inPrivate"
+      ],
       "preLaunchTask": "npm: test",
       "url": "http://localhost:9876/debug.html"
     }
