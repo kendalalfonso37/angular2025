@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { User } from '../../models/user.interface';
 import { PaginatedResponse } from '../../models/paginated-response.interface';
+import { RoleAssignment } from '../../models/role-assignment';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -47,5 +48,24 @@ export class UserService {
 
   deleteUser(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/api/users/${id}`);
+  }
+
+  getUserRoles(userId: string) {
+    return this.http.get<RoleAssignment[]>(
+      `${this.baseUrl}/api/users/${userId}/roles`
+    );
+  }
+
+  asignarRoles(userId: string, roleIds: string[]) {
+    return this.http.post<RoleAssignment>(
+      `${this.baseUrl}/api/users/${userId}/roles`,
+      { roleIds }
+    );
+  }
+
+  eliminarRoles(userId: string, roleId: string) {
+    return this.http.delete(
+      `${this.baseUrl}/api/users/${userId}/roles/${roleId}`
+    );
   }
 }

@@ -96,4 +96,9 @@ export class UsuariosListComponent {
       this.currentPage.set(newPage);
     }
   }
+
+  // Pantalla para asignar roles a un usuario
+  goToAsignarRoles(id: string) {
+    this.router.navigate(['usuarios', id, 'roles']);
+  }
 }

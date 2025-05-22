@@ -10,6 +10,7 @@ import { UsuarioEditComponent } from './pages/usuarios/usuario-edit/usuario-edit
 import { RolesListComponent } from './pages/roles/roles-list/roles-list.component';
 import { RoleCreateComponent } from './pages/roles/role-create/role-create.component';
 import { RoleEditComponent } from './pages/roles/role-edit/role-edit.component';
+import { UsuariosAsignarRolesComponent } from './pages/usuarios/usuarios-asignar-roles/usuarios-asignar-roles.component';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,7 @@ export const routes: Routes = [
       { path: 'usuarios', component: UsuariosListComponent },
       { path: 'usuarios/create', component: UsuarioCreateComponent },
       { path: 'usuarios/edit/:id', component: UsuarioEditComponent },
+      { path: 'usuarios/:id/roles', component: UsuariosAsignarRolesComponent },
       { path: 'roles', component: RolesListComponent },
       { path: 'roles/create', component: RoleCreateComponent },
       { path: 'roles/edit/:id', component: RoleEditComponent },

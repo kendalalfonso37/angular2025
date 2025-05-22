@@ -49,4 +49,8 @@ export class RoleService {
   deleteRole(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/api/roles/${id}`);
   }
+
+  getRolesActivos() {
+    return this.http.get<{ data: Role[] }>(`${this.baseUrl}/api/roles/activos`);
+  }
 }
