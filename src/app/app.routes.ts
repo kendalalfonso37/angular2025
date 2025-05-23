@@ -17,6 +17,7 @@ import { GrupoEditComponent } from './pages/grupos/grupo-edit/grupo-edit.compone
 import { PermisosListComponent } from './pages/permisos/permisos-list/permisos-list.component';
 import { PermisoCreateComponent } from './pages/permisos/permiso-create/permiso-create.component';
 import { PermisoEditComponent } from './pages/permisos/permiso-edit/permiso-edit.component';
+import { RolesAsignarPermisosComponent } from './pages/roles/roles-asignar-permisos/roles-asignar-permisos.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,7 @@ export const routes: Routes = [
       { path: 'roles', component: RolesListComponent },
       { path: 'roles/create', component: RoleCreateComponent },
       { path: 'roles/edit/:id', component: RoleEditComponent },
+      { path: 'roles/:id/permisos', component: RolesAsignarPermisosComponent },
       { path: 'grupos', component: GruposListComponent },
       { path: 'grupos/create', component: GrupoCreateComponent },
       { path: 'grupos/edit/:id', component: GrupoEditComponent },

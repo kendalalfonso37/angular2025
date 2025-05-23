@@ -57,10 +57,10 @@ export class UserService {
   }
 
   asignarRoles(userId: string, roleIds: string[]) {
-    return this.http.post<RoleAssignment>(
-      `${this.baseUrl}/api/users/${userId}/roles`,
-      { roleIds }
-    );
+    return this.http.post<{
+      message: string;
+      data: { userId: number; roles: string[] };
+    }>(`${this.baseUrl}/api/users/${userId}/roles`, { roleIds });
   }
 
   eliminarRoles(userId: string, roleId: string) {
