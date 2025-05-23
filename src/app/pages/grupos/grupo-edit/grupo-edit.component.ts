@@ -6,7 +6,6 @@ import { GroupService } from '../../../core/services/group.service';
 import { GrupoFormComponent } from '../grupo-form/grupo-form.component';
 import { NotificationService } from '../../../core/services/notification.service';
 
-
 @Component({
   selector: 'app-grupo-edit',
   imports: [GrupoFormComponent, RouterLink],
@@ -23,29 +22,30 @@ export class GrupoEditComponent {
   ) {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.groupService.getGrupoById(id).subscribe((res) => this.group.set(res));
+      this.groupService
+        .getGrupoById(id)
+        .subscribe((res) => this.group.set(res));
     }
   }
 
-    updateGroup(data: Partial<Group>) {
-      const id = this.group()?.id;
-      if (id) {
-        this.groupService.updateGroup(id, data).subscribe(
-          {
-            next: () => {
-              this.notificationService.show(
-                'success',
-                'Grupo actualizado correctamente'
-              ),
-                this.router.navigate(['/grupos']);
-              return;
-            },
-          }
-          // () => {
-          //   this.router.navigate(['/grupos']);
-          // }
-        );
-      }
+  updateGroup(data: Partial<Group>) {
+    const id = this.group()?.id;
+    if (id) {
+      this.groupService.updateGroup(id, data).subscribe(
+        {
+          next: () => {
+            this.notificationService.show(
+              'success',
+              'Grupo actualizado correctamente'
+            ),
+              this.router.navigate(['/grupos']);
+            return;
+          },
+        }
+        // () => {
+        //   this.router.navigate(['/grupos']);
+        // }
+      );
     }
-
+  }
 }

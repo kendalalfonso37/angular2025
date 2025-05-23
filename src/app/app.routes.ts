@@ -14,6 +14,9 @@ import { UsuariosAsignarRolesComponent } from './pages/usuarios/usuarios-asignar
 import { GruposListComponent } from './pages/grupos/grupos-list/grupos-list.component';
 import { GrupoCreateComponent } from './pages/grupos/grupo-create/grupo-create.component';
 import { GrupoEditComponent } from './pages/grupos/grupo-edit/grupo-edit.component';
+import { PermisosListComponent } from './pages/permisos/permisos-list/permisos-list.component';
+import { PermisoCreateComponent } from './pages/permisos/permiso-create/permiso-create.component';
+import { PermisoEditComponent } from './pages/permisos/permiso-edit/permiso-edit.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +35,9 @@ export const routes: Routes = [
       { path: 'grupos', component: GruposListComponent },
       { path: 'grupos/create', component: GrupoCreateComponent },
       { path: 'grupos/edit/:id', component: GrupoEditComponent },
+      { path: 'permisos', component: PermisosListComponent },
+      { path: 'permisos/create', component: PermisoCreateComponent },
+      { path: 'permisos/edit/:id', component: PermisoEditComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },

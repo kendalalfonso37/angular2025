@@ -12,8 +12,11 @@ import { NotificationService } from '../../../core/services/notification.service
   templateUrl: './grupo-create.component.html',
 })
 export class GrupoCreateComponent {
-    constructor(private groupService: GroupService, private router: Router, private notificationService: NotificationService) {}
-
+  constructor(
+    private groupService: GroupService,
+    private router: Router,
+    private notificationService: NotificationService
+  ) {}
 
   createGroup(data: Partial<Group>) {
     this.groupService.createGroup(data).subscribe(

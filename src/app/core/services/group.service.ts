@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { environment } from '../../../environments/environment';
 import { PaginatedResponse } from '../../models/paginated-response.interface';
 import { Group } from '../../models/group';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
